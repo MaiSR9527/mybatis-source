@@ -344,6 +344,7 @@ public abstract class BaseExecutor implements Executor {
             // 从缓存中移除占位对象
             localCache.removeObject(key);
         }
+        // 把查询结果放到一级缓存
         localCache.putObject(key, list);
         if (ms.getStatementType() == StatementType.CALLABLE) {
             localOutputParameterCache.putObject(key, parameter);

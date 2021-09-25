@@ -29,6 +29,7 @@ public class Main {
         // 4.使用JDK动态代理对mapper接口产生代理对象
         UserDao userDao = sqlSession.getMapper(UserDao.class);
         userDao.findAll();
+        sqlSession.commit();
     }
 
     private static void tranditionalXML() throws IOException {

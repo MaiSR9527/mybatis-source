@@ -273,6 +273,7 @@ public class MapperBuilderAssistant extends BaseBuilder {
                 .resultSetType(resultSetType)
                 .flushCacheRequired(valueOrDefault(flushCache, !isSelect))
                 .useCache(valueOrDefault(useCache, isSelect))
+                // 在这里将之前生成的 Cache 封装到 MappedStatement
                 .cache(currentCache);
 
         ParameterMap statementParameterMap = getStatementParameterMap(parameterMap, parameterType, id);
